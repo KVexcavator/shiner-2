@@ -9,7 +9,8 @@ require("@rails/activestorage").start()
 require("channels")
 
 
-import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../stylesheets/application'
 
 
 document.addEventListener("turbolinks:load", () => {
