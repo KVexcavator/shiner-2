@@ -8,14 +8,21 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
-
+import './stylesheets/dashboard/index'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../stylesheets/application'
 
 
-document.addEventListener("turbolinks:load", () => {
-  $('[data-toggle="tooltip"]').tooltip()
-});
+// $(function () {
+//   $('[data-toggle="tooltip"]').tooltip()
+// })
+
+// jQuery( document ).ready(function( $ ) {
+//   $('[data-toggle="tooltip"]').tooltip();
+// });
+
+// document.addEventListener("turbolinks:load", () => {
+//   $('[data-toggle="tooltip"]').tooltip()
+// });
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

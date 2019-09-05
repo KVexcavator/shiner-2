@@ -1,8 +1,9 @@
 const { environment } = require('@rails/webpacker');
-const css = require('./loaders/css')
+const webpack = require('webpack');
+const css = require('./loaders/css');
+const url = require('./loaders/url');
 
 // bootstrap wtith depensences
-const webpack = require('webpack')
 environment.plugins.append('Provide',
   new webpack.ProvidePlugin({
     $: 'jquery',
@@ -12,6 +13,12 @@ environment.plugins.append('Provide',
 )
 
 // css-loader
-environment.loaders.prepend('css', css)
+environment.loaders.prepend('css', css);
+
+// url-loader
+environment.loaders.prepend('url', url);
+
+// avoid using both file and url loaders
+environment.loaders.get('file').test = /\.eot(\?v=\d+\.\d+\.\d+)?$/
 
 module.exports = environment
